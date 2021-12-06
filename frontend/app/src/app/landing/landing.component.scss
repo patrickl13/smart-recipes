@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+
+  .landing-text {
+    width: 550px;
+    grid-area: landing-text;
+    margin: 30px;
+    align-self: center;
+    justify-self: center;
+
+    button {
+      margin-right: 20px;
+    }
+  }
+}
+
+
+

@@ -1,0 +1,12 @@
+<h3> Add Photo </h3>
+<app-image-upload
+  (imageFileOutput)="updateImageFile($event)">
+</app-image-upload>
+<app-text-editor
+  (editorOutput)="updateInstructionsData($event)"
+  [editorInput]="instructionsData">
+</app-text-editor>
+<div mat-dialog-actions>
+  <button mat-button color="warn" class="btn btn-cancel" (click)="close()">CANCEL</button>
+  <button mat-raised-button color="primary" class="btn" [disabled]="!instructionsData" (click)="addStep()">ADD STEP</button>
+</div>

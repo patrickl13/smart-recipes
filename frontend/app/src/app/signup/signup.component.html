@@ -1,0 +1,30 @@
+<div class="signup-container">
+  <mat-card class="signup-form-container">
+    <h3> Sign Up </h3>
+    <form [formGroup]="registerForm">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Re-enter Password</mat-label>
+        <input matInput formControlName="passwordRepeat" type="password">
+      </mat-form-field>
+      <button mat-raised-button color="primary"
+              [disabled]="!email.value || !username.value || !password.value || !passwordRepeat.value || (password.value !== passwordRepeat.value)"
+              (click)="registerUser()">Sign Up</button>
+    </form>
+
+    <div *ngIf="error" class="error-box">
+      <p> {{guidance}}</p>
+    </div>
+  </mat-card>
+</div>

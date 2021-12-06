@@ -1,0 +1,23 @@
+<div>
+  <h3> Ingredients </h3>
+  <form [formGroup]="ingredientsForm" class="add-ingredient-container">
+    <mat-form-field>
+      <mat-label>Ingredient</mat-label>
+      <input matInput type="text" formControlName="ingredientField">
+    </mat-form-field>
+    <button mat-mini-fab color="primary" (click)="addIngredient()"
+            [disabled]="ingredientToAdd.value.replace('/\s/g', '') == ''">
+      <mat-icon>add</mat-icon></button>
+  </form>
+</div>
+<div>
+  <div *ngFor="let ingredient of ingredients" class="add-ingredient-container">
+    <mat-card class="ingredient-item">
+      <div class="ingredients-inner-content">
+        <p class="ingredient-text"> {{ ingredient }}</p>
+        <button mat-icon-button color="primary" (click)="removeIngredient(ingredient)"> <mat-icon>delete_icon</mat-icon></button>
+      </div>
+    </mat-card>
+  </div>
+
+</div>

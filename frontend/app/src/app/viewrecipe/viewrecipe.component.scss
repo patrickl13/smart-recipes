@@ -1,0 +1,94 @@
+$blue-high-emphasis: #187bcd;
+$blue-medium-emphasis: #2a9df4;
+$blue-low-emphasis: #d0efff;
+$white-color: #ffffff;
+
+.view-recipe-container {
+
+  .title {
+    text-align: center;
+    color: $blue-high-emphasis;
+  }
+
+  .top-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+
+    .image-display {
+      width: 400px;
+
+      img {
+        width: 400px;
+        height: auto;
+      }
+
+      .lower-banner {
+        margin-top: -4px;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 30px;
+        align-items: center;
+        height: 80px;
+        color: $white-color;
+        background-color: $blue-medium-emphasis;
+      }
+    }
+
+    .ingredients-container {
+      background-color: $blue-low-emphasis;
+      width: 400px;
+
+      .ingredient-text {
+        color: black;
+        margin-left: 50px;
+      }
+    }
+
+  }
+
+  .steps-container {
+    margin: 0 auto;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px;
+
+    .step-item {
+      margin-bottom: 20px;
+      width: 300px;
+
+      .crop {
+        width: inherit;
+        height: auto;
+        overflow: hidden;
+      }
+
+      .crop img {
+        width: inherit;
+        height: 300px;
+        //margin: -75px 0 0 -100px;
+      }
+
+      .lower-text {
+        width: inherit;
+        word-wrap: break-word;
+        height: 100px;
+        margin-top: -4px;
+        background-color: $blue-low-emphasis;
+
+        .title-text {
+          color: $blue-high-emphasis;
+        }
+      }
+    }
+  }
+}
+
+

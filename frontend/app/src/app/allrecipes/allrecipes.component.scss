@@ -1,0 +1,36 @@
+.all-recipes {
+  margin-left: 20px;
+
+  .empty-recipes {
+    margin-top: 100px;
+    text-align: center;
+
+    mat-spinner {
+      width: 50px;
+    }
+  }
+
+  .recipes-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .recipe-card {
+      margin: 10px;
+      width: 250px;
+      height: auto;
+      text-align: center;
+
+      .image-container {
+        width: 250px;
+        height: 220px;
+
+        img {
+          max-height: 210px;
+          max-width: 250px;
+          width: auto;
+        }
+      }
+    }
+  }
+}

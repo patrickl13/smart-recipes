@@ -1,0 +1,11 @@
+.recipe-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .form-item {
+    margin-right: 30px;
+
+  }
+}

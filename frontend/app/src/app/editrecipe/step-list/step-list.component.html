@@ -1,0 +1,14 @@
+<ng-container>
+  <h3> Steps </h3>
+  <mat-card *ngFor="let step of steps" class="step-container">
+    <div>
+      <img [src]="step.image.document">
+    </div>
+    <div class="instructions-text" [innerHTML]="step.instructions"> </div>
+    <button mat-mini-fab color="primary"
+            class="delete-step-button"
+            (click)="deleteStep(step)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card>
+</ng-container>

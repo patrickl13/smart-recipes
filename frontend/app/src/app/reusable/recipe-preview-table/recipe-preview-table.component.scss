@@ -1,0 +1,23 @@
+.cards {
+  margin-top: 50px;
+  margin-left: 260px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-item {
+  height: 200px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  flex-basis: 25%;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+
+
+  }
+
+}

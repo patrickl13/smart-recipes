@@ -1,0 +1,33 @@
+<div *ngIf="recipe" class="view-recipe-container">
+  <div class="title">
+    <h2> {{recipe.title}} </h2>
+  </div>
+  <div class="top-container">
+    <div class="image-display">
+      <img [src]="recipe.thumbnail[0].document">
+      <div class="lower-banner">
+        Cooking Time: <h3>{{recipe.time_minutes}} minutes</h3>
+      </div>
+    </div>
+    <div class="ingredients-container">
+      <div class="ingredient-text">
+        <h3> Ingredients:</h3>
+        <ul *ngFor="let ingredient of recipe.ingredients">
+          <li class="ingredient-text"> {{ingredient}} </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="steps-container">
+    <div class="step-item" *ngFor="let step of recipe.steps; let i = index">
+      <div class="crop">
+        <img [src]="step.image.document">
+      </div>
+      <div class="lower-text">
+        <div class="title-text"><strong> Step {{i + 1}} </strong> </div>
+        <div [innerHTML]="step.instructions"></div>
+      </div>
+    </div>
+  </div>
+</div>
+

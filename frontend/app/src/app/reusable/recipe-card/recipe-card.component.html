@@ -1,0 +1,7 @@
+<mat-card *ngIf="recipe" (click)="goTo(recipe.id)">
+  <div>
+  </div>
+  <div *ngIf="!viewRecipe" class="delete-recipe-button" (click)="$event.stopPropagation();">
+    <mat-icon>delete</mat-icon>
+  </div>
+</mat-card>

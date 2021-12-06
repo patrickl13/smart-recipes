@@ -1,0 +1,29 @@
+<div class="all-recipes">
+  <h3> All Recipes </h3>
+  <div class="recipes-container" *ngIf="recipes && recipes.length > 0">
+    <mat-card *ngFor="let recipe of recipes" class="recipe-card">
+      <mat-card-header>
+        <mat-card-title>{{recipe.title}}</mat-card-title>
+        <mat-card-subtitle>{{recipe.category | titlecase}}</mat-card-subtitle>
+      </mat-card-header>
+      <div class="image-container">
+        <img mat-card-image *ngIf="recipe.thumbnail" [src]="recipe.thumbnail[0].document">
+        <img mat-card-image *ngIf="!recipe.thumbnail" src="../../assets/chefhat.svg">
+      </div>
+      <mat-card-content>
+        <p>
+          Preparation time: {{recipe.time_minutes}} min.
+        </p>
+      </mat-card-content>
+      <mat-card-actions class="bottom-buttons">
+        <button color="primary" mat-button (click)="router.navigate(['view/' + recipe.id]);">VIEW</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div *ngIf="pending" class="empty-recipes">
+    <mat-spinner style="margin:0 auto;"></mat-spinner>
+  </div>
+  <div *ngIf="recipes.length == 0 && !pending" class="empty-recipes">
+    <h4> No recipes found.</h4>
+  </div>
+</div>

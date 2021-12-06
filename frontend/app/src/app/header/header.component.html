@@ -1,0 +1,20 @@
+<div id="mySidenav" class="sidenav">
+  <div class="close-box" (click)="closeNav()">
+    <mat-icon>close</mat-icon>
+  </div>
+  <div class="route-box">
+    <button mat-raised-button color="primary" *ngIf="isLoggedIn" (click)="createNewRecipe()">Create Recipe <mat-icon>add</mat-icon></button>
+    <a *ngIf="isLoggedIn" (click)="goTo('/myrecipes')">My Recipes</a>
+    <a (click)="goTo('/allrecipes')">All Recipes</a>
+    <a *ngIf="!isLoggedIn"(click)="goTo('/login')">Login</a>
+    <a *ngIf="isLoggedIn" (click)="logoutUser()">Logout</a>
+  </div>
+</div>
+<span>
+  <div class="toolbar" (click)="openNav()">
+    <div class="menu-box">
+      <mat-icon>menu</mat-icon>
+    </div>
+  </div>
+</span>
+

@@ -1,0 +1,37 @@
+<div class="recipe-container">
+  <mat-card *ngIf="recipe">
+    <h3> Edit Recipe </h3>
+    <app-recipe-information
+      *ngIf="recipe"
+      [titleInput]="recipe.title"
+      [timeInput]="recipe.time_minutes"
+      [categoryInput]="recipe.category"
+      (timeOutput)="updateTime($event)"
+      (titleOutput)="updateTitle($event)"
+      (categoryOutput)="updateCategory($event)">
+    </app-recipe-information>
+    <h3> Thumbnail </h3>
+    <app-image-upload
+      (imageFileOutput)="updateThumbnailFile($event)"
+      [defaultImage]="recipe.thumbnail[0]">
+    </app-image-upload>
+    <app-ingredients-list
+      *ngIf="recipe"
+      (ingredientsOutput)="updateIngredientsData($event)"
+      [ingredientsInput]="recipe.ingredients">
+    </app-ingredients-list>
+    <h3> Instructions </h3>
+    <button mat-raised-button color="primary" (click)="openAddStepDialog(false)"> Add Step </button>
+    <app-step-list
+      *ngIf="steps.length > 0"
+      [steps]="steps"
+      (stepsEmitter)="updateSteps($event)">
+    </app-step-list>
+    <div class='edit-recipe-button'>
+      <button mat-raised-button color="primary"
+              [disabled]="this.title === '' || this.category === '' || this.time <= 0 ||
+                          this.ingredientsData?.length <= 0"
+              (click)="updateRecipe()">Save Recipe</button>
+    </div>
+  </mat-card>
+</div>

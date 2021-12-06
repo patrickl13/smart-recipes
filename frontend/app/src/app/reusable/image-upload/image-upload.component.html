@@ -1,0 +1,16 @@
+<div class="image-list-container">
+  <div class="image-upload-view">
+    <div *ngIf="image" class="image-item">
+      <img *ngIf="image" [src]="image">
+      <button mat-mini-fab color="primary"
+              class="delete-image-button"
+              (click)="removeImage()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="add-image-button">
+    <input #imageInput hidden="true" type="file" (change)="imageInputChange($event)" accept=".jpg, .png, .jpeg"/>
+    <button mat-mini-fab color="primary" (click)="imageInput.click()" [disabled]="image && imageFile"> <mat-icon>attach_file</mat-icon></button>
+  </div>
+</div>

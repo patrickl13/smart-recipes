@@ -1,0 +1,47 @@
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 10px;
+  transition: 0.5s;
+
+  .close-box {
+    padding-left: 10px;
+    color: white;
+  }
+
+  .route-box {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+
+    .greeting {
+      color: white;
+    }
+
+    a {
+      padding-top: 20px;
+      color: white;
+      &:hover {
+        color: cornflowerblue;
+      }
+    }
+  }
+}
+
+.toolbar {
+  height: 40px;
+  background-color: #111111;
+  padding-top: 10px;
+  padding-left: 10px;
+
+  .menu-box {
+    color: white;
+  }
+
+}

@@ -1,0 +1,13 @@
+<div class="image-list-container">
+  <h3> Recipe Thumbnail </h3>
+  <div class="image-list-view">
+    <div *ngFor="let image of images" class="image-item">
+      <img [src]="image.document">
+      <button mat-mini-fab color="primary" class="delete-image-button" (click)="confirmDeleteImage(image.id)"> <mat-icon>delete</mat-icon></button>
+    </div>
+  </div>
+  <div class="add-image-button">
+    <input #imageInput hidden="true" type="file" onclick="this.value=null" (change)="imageInputChange($event)" accept=".jpg, .png, .jpeg"/>
+    <button mat-mini-fab color="primary" (click)="imageInput.click()"> <mat-icon>attach_file</mat-icon></button>
+  </div>
+</div>

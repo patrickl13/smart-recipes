@@ -1,0 +1,32 @@
+.login-container {
+  padding: 100px 20px;
+
+  .login-form-container {
+    margin: auto;
+    max-width:400px;
+    height: 450px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+
+    mat-form-field {
+      width: 80%;
+    }
+
+    button {
+      width: 100px;
+    }
+    .signup-container {
+      margin: 70px;
+    }
+  }
+
+  .error-box {
+    color: #fd5c63;
+  }
+
+
+}
+
+

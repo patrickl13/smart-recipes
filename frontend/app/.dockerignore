@@ -1,0 +1,16 @@
+
+.git
+
+.idea
+
+.editorconfig
+
+/node_modules
+
+/e2e
+
+/docs
+
+.gitignore
+
+proxy.config.json

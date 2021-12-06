@@ -1,0 +1,31 @@
+.image-list-container {
+
+  .image-list-view {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .image-item {
+      padding: 10px;
+      position: relative;
+      margin-right: 10px;
+      img {
+        max-height: 200px;
+        width: auto;
+      }
+
+      .delete-image-button {
+        position: absolute;
+        top: -4px;
+        right: -4px;
+      }
+
+    }
+
+  }
+
+  .add-image-button {
+
+  }
+}

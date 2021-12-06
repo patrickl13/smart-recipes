@@ -1,0 +1,31 @@
+<div class="my-recipes">
+  <h3> My Recipes </h3>
+  <div class="recipes-container" *ngIf="recipes && recipes.length > 0">
+    <mat-card *ngFor="let recipe of recipes" class="recipe-card">
+      <mat-card-header>
+        <mat-card-title>{{recipe.title}}</mat-card-title>
+        <mat-card-subtitle>{{recipe.category | titlecase}}</mat-card-subtitle>
+      </mat-card-header>
+      <div class="image-container">
+        <img mat-card-image *ngIf="recipe.thumbnail[0]" [src]="recipe.thumbnail[0].document">
+        <img mat-card-image *ngIf="!recipe.thumbnail[0]" src="../../assets/chefhat.svg">
+      </div>
+      <mat-card-content>
+        <p>
+          Preparation time: {{recipe.time_minutes}} min.
+        </p>
+      </mat-card-content>
+      <mat-card-actions class="bottom-buttons">
+        <button color="warn" mat-button (click)="confirmDeleteRecipe(recipe.id)">DELETE</button>
+        <button color="primary" mat-button (click)="router.navigate(['edit/' + recipe.id]);">EDIT</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div *ngIf="recipes && recipes.length == 0" class="empty-recipes">
+    <h3> You have no created recipes. Start by clicking below.</h3>
+    <button mat-raised-button color="primary" (click)="createNewRecipe()">Create Recipe <mat-icon>add</mat-icon></button>
+  </div>
+  <div *ngIf="!recipes" class="empty-recipes">
+    <mat-spinner style="margin:0 auto;"></mat-spinner>
+  </div>
+</div>

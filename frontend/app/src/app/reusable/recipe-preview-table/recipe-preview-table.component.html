@@ -1,0 +1,7 @@
+<div class="table-container" *ngIf="recipeInput" class="cards">
+  <app-recipe-card *ngFor="let recipe of recipeInput.recipes" class="card-item"
+                   [recipe]="recipe"
+                   [viewRecipe]="false"
+                   (refreshEvent)="refresh($event)"></app-recipe-card>
+</div>
+

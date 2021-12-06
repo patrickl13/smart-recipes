@@ -1,0 +1,17 @@
+<h3> Information </h3>
+<form [formGroup]="recipeForm" class="recipe-form">
+  <mat-form-field class="form-item">
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title" (change)="titleOutput.emit(title.value)">
+  </mat-form-field>
+  <mat-form-field class="form-item">
+    <mat-label>Category</mat-label>
+    <mat-select [(value)]="selected" (selectionChange)="categoryOutput.emit(selected)">
+      <mat-option *ngFor="let option of categoryOptions" [value]="option">{{option | lowercase}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="form-item">
+    <mat-label>Time (min)</mat-label>
+    <input matInput type="number" formControlName="time" (change)="timeOutput.emit(time.value)">
+  </mat-form-field>
+</form>
